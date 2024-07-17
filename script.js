@@ -7,7 +7,7 @@ const filmShowtime = document.getElementById("film-showtime");
 const availableTickets = document.getElementById("film-tickets");
 const buyTicketBtn = document.getElementById("buy-ticket");
 
-const filmsurl = 'http://localhost:3000/films';
+const filmsurl = 'http://localhost:3001/films';
 
 //Function adding event listener
 document.addEventListener('DOMContentLoaded', () => {
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
  //Function to get placeholder film
     function fetchFirstMovie() {
-        fetch("http://localhost:3000/films/1")
+        fetch("http://localhost:3001/films/1")
             .then(response => response.json())
             .then(film => {
                 displayFilmDetails(film);
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     function updateTicketsSold(film) {
-        fetch(`http://localhost:3000/films/${film.id}`, {
+        fetch(`http://localhost:3001/films/${film.id}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json"
@@ -89,3 +89,4 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
 
+ 
