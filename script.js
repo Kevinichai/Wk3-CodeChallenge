@@ -9,10 +9,6 @@ const buyTicketBtn = document.getElementById("buy-ticket");
 
 const filmsUrl = 'http://localhost:3001/films';
 
-document.addEventListener('DOMContentLoaded', () => {
-    fetchFirstMovie();
-    fetchAllFilms();
-});
 
 function fetchFirstMovie() {
     fetch(`${filmsUrl}/1`)
@@ -27,7 +23,7 @@ function fetchAllFilms() {
     fetch(filmsUrl)
         .then(response => response.json())
         .then(films => {
-            filmsList.innerHTML = "";
+            filmsList.textContent = "";
             films.forEach(film => {
                 const filmsListItem = document.createElement('li');
                 filmsListItem.textContent = film.title;
