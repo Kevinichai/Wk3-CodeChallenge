@@ -7,7 +7,7 @@ const filmShowtime = document.getElementById("film-showtime");
 const availableTickets = document.getElementById("film-tickets");
 const buyTicketBtn = document.getElementById("buy-ticket");
 
-const filmsUrl = 'http://localhost:3002/films';
+const filmsUrl = 'http://localhost:3000/films';
 
 fetchFirstMovie();
 fetchAllFilms();
